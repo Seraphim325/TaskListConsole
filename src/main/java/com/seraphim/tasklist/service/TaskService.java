@@ -17,19 +17,19 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public void createTask() {
-        
+    public void createTask(String title, String description) {
+        taskRepository.save(title, description);
     }
 
     public List<Task> getAllTasks() {
-        return null;
+        return taskRepository.findAll();
     }
 
     public boolean markAsCompleted(int id) {
-        return false;
+        return taskRepository.markAsCompleted(id);
     }
 
     public boolean deleteTask(int id) {
-        return false;
+        return taskRepository.deleteById(id);
     }
 }

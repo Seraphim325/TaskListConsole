@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TaskRepository {
-    Task save(Task task);
-
-    Optional<Task> findById(int id);
+    Task save(String title, String description);
 
     List<Task> findAll();
 
     boolean deleteById(int id);
+
+    boolean markAsCompleted(int id);
 
 }
